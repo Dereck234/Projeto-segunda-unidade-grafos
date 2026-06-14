@@ -1,0 +1,4 @@
+/* Global reset — o design principal fica no App.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

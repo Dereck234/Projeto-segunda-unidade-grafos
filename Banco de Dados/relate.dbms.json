@@ -1,0 +1,37 @@
+{
+  "name": "MeuProjetoBanco",
+  "description": "",
+  "tags": [],
+  "metadata": {
+    "createdAt": 1781367118312,
+    "lastStartedAt": 1781444777180,
+    "lastDatabasesRefresh": 1781445214709,
+    "databases": [
+      {
+        "databaseName": "neo4j",
+        "statistics": {
+          "nodes": 11,
+          "relationships": 19,
+          "labels": 2,
+          "relationshipTypes": 2,
+          "propertyKeys": 7
+        }
+      },
+      {
+        "databaseName": "system"
+      },
+      {
+        "databaseName": "teste",
+        "statistics": {
+          "nodes": 0,
+          "relationships": 0,
+          "labels": 0,
+          "relationshipTypes": 0,
+          "propertyKeys": 0
+        }
+      }
+    ]
+  },
+  "id": "e3de8175-7977-4886-8152-e4523c950540",
+  "isCustomPathInstallation": false
+}
