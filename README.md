@@ -90,6 +90,8 @@ npm run build
 
 ### Back-End
 
+> O backend é tratado por outra pessoa; esta documentação indica apenas como iniciar o serviço se ele estiver disponível.
+
 1. Verifique se o Java 21 está instalado e o `JAVA_HOME` está configurado.
 2. Navegue até a pasta do backend:
 
@@ -102,6 +104,12 @@ cd Back
 ```bash
 ./mvnw spring-boot:run
 ```
+
+### Front-End e Conexão com Backend
+
+- O front-end foi finalizado e pode rodar de forma independente com autenticação demonstrativa.
+- Em desenvolvimento, o Vite está configurado para encaminhar chamadas de `/api` para `http://localhost:8080`.
+- A integração final com o backend deverá ser feita pela próxima pessoa responsável pelo `Back`.
 
 ### Banco de Dados
 

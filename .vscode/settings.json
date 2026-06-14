@@ -1,0 +1,10 @@
+{
+  "typescript.tsdk": "./Front/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.workspace.version": "local",
+  "typescript.tsdk.autoDetect": false,
+  "eslint.workingDirectories": [
+    { "mode": "auto" },
+    { "pattern": "Front" }
+  ]
+}
