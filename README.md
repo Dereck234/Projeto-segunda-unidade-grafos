@@ -62,4 +62,49 @@ Projeto desenvolvido para a segunda unidade da disciplina de Teoria de Grafos. O
 
 ## 🚀 Como Executar o Projeto
 
-_(TODO: Adicionar instruções passo a passo para rodar o projeto localmente, instalar dependências e configurar o banco de dados.)_
+### Front-End
+
+1. Navegue até a pasta do front-end:
+
+```bash
+cd Front
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Execute em modo de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+4. Para criar o build de produção:
+
+```bash
+npm run build
+```
+
+### Back-End
+
+1. Verifique se o Java 21 está instalado e o `JAVA_HOME` está configurado.
+2. Navegue até a pasta do backend:
+
+```bash
+cd Back
+```
+
+3. Execute a aplicação Spring Boot:
+
+```bash
+./mvnw spring-boot:run
+```
+
+### Banco de Dados
+
+O projeto usa Neo4j para armazenamento e recomendações. Configure o Neo4j localmente ou via Docker antes de iniciar o backend.
+
+Se necessário, ajuste as credenciais e a URL de conexão no arquivo de configuração do Spring Boot.

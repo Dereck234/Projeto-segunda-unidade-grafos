@@ -1,4 +1,3 @@
-/* ─── Reset & Base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -23,7 +22,6 @@ body {
   min-height: 100vh;
 }
 
-/* ─── Header ────────────────────────────────────────────────────────────────── */
 .header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -55,7 +53,7 @@ body {
 .badge-spring { background: rgba(109,179,63,.15); color: var(--spring); border: 1px solid rgba(109,179,63,.3); }
 .badge-react  { background: rgba(97,218,251,.15); color: var(--react-c); border: 1px solid rgba(97,218,251,.3); }
 
-/* ─── Tabs ──────────────────────────────────────────────────────────────────── */
+
 .tabs {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -79,14 +77,14 @@ body {
 .tab:hover { color: var(--text); }
 .tab-active { color: var(--primary) !important; border-bottom-color: var(--primary); }
 
-/* ─── Main ──────────────────────────────────────────────────────────────────── */
+
 .main {
   max-width: 760px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
 
-/* ─── Card ──────────────────────────────────────────────────────────────────── */
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -97,7 +95,7 @@ body {
 .card h2 { font-size: 1.15rem; margin-bottom: 0.3rem; }
 .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.2rem; }
 
-/* ─── Form ──────────────────────────────────────────────────────────────────── */
+
 .form-group { display: flex; flex-direction: column; gap: 0.7rem; }
 .input {
   background: var(--surface2);
@@ -117,7 +115,7 @@ select.input { cursor: pointer; }
 .range-group label { font-size: 0.85rem; color: var(--muted); }
 .range-group input[type="range"] { accent-color: var(--primary); }
 
-/* ─── Buttons ───────────────────────────────────────────────────────────────── */
+
 .btn {
   border: none;
   border-radius: 8px;
@@ -132,7 +130,7 @@ select.input { cursor: pointer; }
 .btn-primary { background: var(--primary); color: #fff; }
 .btn-accent  { background: var(--accent);  color: #fff; }
 
-/* ─── Messages ──────────────────────────────────────────────────────────────── */
+
 .msg {
   background: var(--surface2);
   border-radius: 8px;
@@ -143,11 +141,11 @@ select.input { cursor: pointer; }
   padding: 0.6rem 0.9rem;
 }
 
-/* ─── Sections ──────────────────────────────────────────────────────────────── */
+
 .secao { margin-top: 1.4rem; }
 .secao h3 { font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--muted); }
 
-/* ─── Tags ──────────────────────────────────────────────────────────────────── */
+
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tag {
   border-radius: 20px;
@@ -158,7 +156,7 @@ select.input { cursor: pointer; }
 .tag-curtido { background: rgba(108,141,250,.15); color: var(--primary); border: 1px solid rgba(108,141,250,.3); }
 .tag-genero  { background: rgba(249,124,93,.12);  color: var(--accent);  border: 1px solid rgba(249,124,93,.3); }
 
-/* ─── Livro cards (grid) ────────────────────────────────────────────────────── */
+
 .livros-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.8rem; }
 .livro-card {
   background: var(--surface2);
@@ -172,7 +170,7 @@ select.input { cursor: pointer; }
 .livro-titulo { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
 .livro-autor  { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
 
-/* ─── BFS Graph Visual ──────────────────────────────────────────────────────── */
+
 .grafo-visual { text-align: center; }
 .no-central { display: flex; justify-content: center; margin-bottom: 0.5rem; }
 .no-livro {
@@ -189,7 +187,7 @@ select.input { cursor: pointer; }
 .seta { color: var(--muted); font-size: 0.78rem; margin: 0.5rem 0; }
 .nos-conectados { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.6rem; text-align: left; margin-top: 0.4rem; }
 
-/* ─── Footer ────────────────────────────────────────────────────────────────── */
+
 .footer {
   border-top: 1px solid var(--border);
   background: var(--surface);
