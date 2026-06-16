@@ -40,6 +40,8 @@ Projeto desenvolvido para a segunda unidade da disciplina de Teoria de Grafos. O
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" height="30" alt="React logo" />
   <img width="12" />
   <img src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-icon-svg-download-png-1174925.png?f=webp" height="30" alt="Node.js logo" />
+  <img width="12" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/3840px-Vitejs-logo.svg.png" height="30" alt="Vitejs logo" />
 </div>
 
 ### Controle de Versão ⚙️
