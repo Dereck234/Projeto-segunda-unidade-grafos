@@ -26,14 +26,10 @@ public class RecomendacaoService {
         this.neo4jClient = neo4jClient;
     }
 
-    // FILTRAGEM COLABORATIVA
     public List<Livro> recomendarParaUsuario(Long usuarioId) {
         return usuarioRepository.recomendarPorFiltragemColaborativa(usuarioId, 10);
     }
 
-    // BFS com profundidade variavel via Neo4jClient
-    // Obs: Cypher nao aceita parametro ($n) em range de path *1..$n,
-    // entao embutimos o inteiro diretamente (seguro: eh int controlado 1-4)
     public List<Livro> explorarRedeDeLivros(String titulo, int profundidade) {
         int depth = Math.max(1, Math.min(profundidade, 4));
 
@@ -65,6 +61,11 @@ public class RecomendacaoService {
     }
 
     public List<Livro> listarTodosLivros()               { return livroRepository.findAll(); }
+
+    public List<Livro> livrosMaisPopulares()             { return livroRepository.livrosMaisPopulares(); }
+
+    public Optional<Livro> buscarLivro(Long id)          { return livroRepository.findById(id); }
+
     public List<Livro> livrosCurtidosPor(Long usuarioId) { return usuarioRepository.listarLivrosCurtidos(usuarioId); }
 
     @Transactional
