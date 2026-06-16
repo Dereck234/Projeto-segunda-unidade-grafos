@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Livro;
 import com.example.demo.service.RecomendacaoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -26,7 +27,21 @@ public class LivroController {
         return service.cadastrarLivro(livro);
     }
 
-    // BFS - profundidade variavel via query param
+    // CENTRALIDADE DE GRAU - livros mais curtidos (GET /api/livros/populares)
+    @GetMapping("/populares")
+    public List<Livro> populares() {
+        return service.livrosMaisPopulares();
+    }
+
+    // Buscar um livro pelo id (GET /api/livros/{id})
+    @GetMapping("/{id}")
+    public ResponseEntity<Livro> buscarPorId(@PathVariable Long id) {
+        return service.buscarLivro(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    // BFS - profundidade variavel via query param (GET /api/livros/{titulo}/rede)
     @GetMapping("/{titulo}/rede")
     public List<Livro> redeDeLivros(
             @PathVariable String titulo,
