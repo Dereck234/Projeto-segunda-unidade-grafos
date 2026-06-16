@@ -5,15 +5,15 @@ Projeto desenvolvido para a segunda unidade da disciplina de Teoria de Grafos. O
 **Proposta do Projeto ✏️:** A ideia principal é realizar a recomendação eficiente de livros baseada na similaridade de gostos entre uma teia de usuários. O motor do projeto funciona utilizando grafos para mapear essas relações e gerar as recomendações.
 
 <div align="center">
-  <img height="400" src="https://wallpapercave.com/wp/wp3800317.jpg" />
+  <img height="400" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg" />
 </div>
 
 ## 👥 Membros da Equipe
 
 <div align="center" style="display: flex; justify-content: center; gap: 10px;">
-    <img height="150" src="https://media.tenor.com/Wj0PIXErkeAAAAAd/sonic-the-hedgehog-tails-tube.gif" alt="Alawander" /> 
-    <img height="150" src="https://media1.tenor.com/m/A9JSYJ8XuSIAAAAC/pokemon-pikachu.gif" alt="Dereck" /> 
-    <img height="150" src="https://th.bing.com/th/id/OIP.SUD6oKLNpLwVD6NH6TEk5wHaHa?rs=1&pid=ImgDetMain" alt="Matheus" /> 
+    <img height="150" src="https://cdn-icons-png.flaticon.com/128/5042/5042347.png" alt="Alawander" /> 
+    <img height="150" src="https://cdn-icons-png.flaticon.com/128/9850/9850774.png" alt="Dereck" /> 
+    <img height="150" src="https://cdn-icons-png.flaticon.com/128/6007/6007875.png" alt="Matheus" /> 
 </div>
 
 - **Alawander Fernandes:** Responsável pelo Front-End
