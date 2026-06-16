@@ -13,30 +13,6 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 ## Expanding the ESLint configuration
 
-## Running the Front-End Locally
-
-1. Install dependencies:
-
-```bash
-npm install
-```
-
-2. Start the development server:
-
-```bash
-npm run dev
-```
-
-3. Run the front-end test suite:
-
-```bash
-npm test
-```
-
-The test script is configured to use the `jsdom` environment so UI tests that require `document` can run correctly.
-
-## React Compiler
-
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
 ```js

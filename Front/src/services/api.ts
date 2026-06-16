@@ -1,45 +1,68 @@
-// src/services/api.ts
-// Camada que conversa com o backend Spring Boot.
-// Todas as chamadas usam o prefixo /api, que o Vite redireciona para http://localhost:8080.
-
 import type { Livro, Usuario } from '../types';
 
-// Faz um GET e devolve o JSON já tipado. Se o servidor responder com erro, lança exceção.
-async function getJSON<T>(url: string): Promise<T> {
-  const resposta = await fetch(url);
-  if (!resposta.ok) {
-    throw new Error(`Erro ${resposta.status} ao chamar ${url}`);
-  }
-  return resposta.json() as Promise<T>;
+// Com o proxy do Vite, não precisamos mais do endereço completo.
+// /api é redirecionado automaticamente para http://localhost:8080/api
+const BASE = '/api';
+
+// ── Livros ──────────────────────────────────────────────────────────────────
+
+export async function getLivros(): Promise<Livro[]> {
+  const res = await fetch(`${BASE}/livros`);
+  if (!res.ok) throw new Error('Erro ao buscar livros');
+  return res.json();
 }
 
-// Lista todos os livros — GET /api/livros
-export function listarLivros(): Promise<Livro[]> {
-  return getJSON<Livro[]>('/api/livros');
+export async function cadastrarLivro(livro: Omit<Livro, 'id'>): Promise<Livro> {
+  const res = await fetch(`${BASE}/livros`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(livro),
+  });
+  if (!res.ok) throw new Error('Erro ao cadastrar livro');
+  return res.json();
 }
 
-// Livros mais populares por nº de curtidas (centralidade de grau) — GET /api/livros/populares
-export function livrosPopulares(): Promise<Livro[]> {
-  return getJSON<Livro[]>('/api/livros/populares');
+export async function getRedeLivros(titulo: string, profundidade = 2): Promise<Livro[]> {
+  const res = await fetch(
+    `${BASE}/livros/${encodeURIComponent(titulo)}/rede?profundidade=${profundidade}`
+  );
+  if (!res.ok) throw new Error('Erro ao buscar rede');
+  return res.json();
 }
 
-// Rede de livros similares (BFS pela relação SIMILAR_A) — GET /api/livros/{titulo}/rede
-// encodeURIComponent trata títulos com espaços e acentos (ex.: "O Senhor dos Anéis").
-export function redeDeLivro(titulo: string): Promise<Livro[]> {
-  return getJSON<Livro[]>(`/api/livros/${encodeURIComponent(titulo)}/rede`);
+// ── Usuários ────────────────────────────────────────────────────────────────
+
+export async function getUsuarios(): Promise<Usuario[]> {
+  const res = await fetch(`${BASE}/usuarios`);
+  if (!res.ok) throw new Error('Erro ao buscar usuários');
+  return res.json();
 }
 
-// Lista os usuários — GET /api/usuarios
-export function listarUsuarios(): Promise<Usuario[]> {
-  return getJSON<Usuario[]>('/api/usuarios');
+export async function cadastrarUsuario(usuario: Omit<Usuario, 'id'>): Promise<Usuario> {
+  const res = await fetch(`${BASE}/usuarios`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(usuario),
+  });
+  if (!res.ok) throw new Error('Erro ao cadastrar usuário');
+  return res.json();
 }
 
-// Recomendações (filtragem colaborativa) de um usuário — GET /api/usuarios/{id}/recomendacoes
-export function recomendacoesPara(usuarioId: number): Promise<Livro[]> {
-  return getJSON<Livro[]>(`/api/usuarios/${usuarioId}/recomendacoes`);
+export async function curtirLivro(usuarioId: number, livroId: number): Promise<void> {
+  const res = await fetch(`${BASE}/usuarios/${usuarioId}/curtir/${livroId}`, {
+    method: 'POST',
+  });
+  if (!res.ok) throw new Error('Erro ao curtir livro');
 }
 
-// Livros curtidos (favoritos) de um usuário — GET /api/usuarios/{id}/curtidos
-export function curtidosDe(usuarioId: number): Promise<Livro[]> {
-  return getJSON<Livro[]>(`/api/usuarios/${usuarioId}/curtidos`);
+export async function getLivrosCurtidos(usuarioId: number): Promise<Livro[]> {
+  const res = await fetch(`${BASE}/usuarios/${usuarioId}/curtidos`);
+  if (!res.ok) throw new Error('Erro ao buscar curtidos');
+  return res.json();
+}
+
+export async function getRecomendacoes(usuarioId: number): Promise<Livro[]> {
+  const res = await fetch(`${BASE}/usuarios/${usuarioId}/recomendacoes`);
+  if (!res.ok) throw new Error('Erro ao buscar recomendações');
+  return res.json();
 }

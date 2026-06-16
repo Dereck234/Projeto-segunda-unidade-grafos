@@ -18,14 +18,4 @@ public interface LivroRepository extends Neo4jRepository<Livro, Long> {
         LIMIT 20
     """)
     List<Livro> redeDeConexoes(String titulo);
-
-    @Query("""
-        MATCH (livro:Livro)
-        OPTIONAL MATCH (livro)<-[c:CURTIU]-(:Usuario)
-        WITH livro, count(c) AS curtidas
-        ORDER BY curtidas DESC
-        RETURN livro
-        LIMIT 10
-    """)
-    List<Livro> livrosMaisPopulares();
 }

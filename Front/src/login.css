@@ -177,12 +177,15 @@ a {
 
 .field-group {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.2rem; /* Alterado de 0.5rem para puxar o texto para baixo/cima */
 }
 
 .field-label {
   font-weight: 700;
   color: var(--text);
+  display: inline-flex;  /* Alinha ícone e texto horizontalmente */
+  align-items: center;   /* Centraliza verticalmente o ícone com o texto */
+  gap: 6px;              /* Espaço entre o ícone e o texto */
 }
 
 .field-input {
@@ -217,7 +220,7 @@ a {
 
 .password-group {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.2rem; /* Alterado de 0.5rem para aproximar o label do input */
 }
 
 .password-controls {
